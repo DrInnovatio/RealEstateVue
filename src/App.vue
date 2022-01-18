@@ -1,4 +1,8 @@
 <template>
+  <div class="menu">
+    
+    <a v-for="jojo in items" :key="jojo">{{jojo}}</a>
+  </div>  
   <img alt="Vue logo" src="./assets/logo.png">
   <div>
     <h1>{{products[0]}} House</h1>
@@ -22,6 +26,7 @@ export default {
   name: 'App',
   data(){
     return{
+      items: ['Home', 'Earl Estate', 'About'],
       products: ['SunnyBank', 'WestEnd', 'EastEnd'],
       price1: 2000,
       price2: 1200,
@@ -41,5 +46,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.menu {
+  background: darkslateblue ;
+  padding: 15px;
+  border-radius: 5px;
+}
+.menu a {
+  color: white;
+  padding: 10px;
 }
 </style>
