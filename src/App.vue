@@ -1,20 +1,12 @@
 <template>
   <div class="menu">
     
-    <a v-for="jojo in items" :key="jojo">{{jojo}}</a>
+    <a v-for="(tom, k) in items" :key="tom">{{k}}</a>
+
   </div>  
-  <img alt="Vue logo" src="./assets/logo.png">
-  <div>
-    <h1>{{products[0]}} House</h1>
-    <p>Price is {{price1}}</p>
-  </div>
-  <div>
-    <h1>{{products[1]}} House</h1>
-    <p>Price is {{price2}}</p>
-  </div>
-  <div>
-    <h1>{{products[2]}} House</h1>
-    <p>Price is {{price3}}</p>
+  <div v-for="(a, i) in products" :key="i">
+    <h4>{{a}}</h4>
+    <p>$50</p>
   </div>
   
 
@@ -28,6 +20,8 @@ export default {
     return{
       items: ['Home', 'Earl Estate', 'About'],
       products: ['SunnyBank', 'WestEnd', 'EastEnd'],
+      cities: ['Sydney', 'New York', 'Tokyo'],
+      cars: ["Hyundai", "Benz", "Toyota", "Honda", "Mazda"],
       price1: 2000,
       price2: 1200,
       price3: 3100
@@ -45,7 +39,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 .menu {
@@ -56,5 +49,10 @@ export default {
 .menu a {
   color: white;
   padding: 10px;
+}
+
+.menu p {
+  color: rgb(40, 241, 13);
+  font-size: 2.0rem;
 }
 </style>
