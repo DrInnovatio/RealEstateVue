@@ -7,6 +7,7 @@
   <div v-for="(a, i) in products" :key="i">
     <h4>{{a}}</h4>
     <p>$50</p>
+    <button @click="call++">허위매물</button><span>call : {{call}} </span>
   </div>
   
 
@@ -18,6 +19,7 @@ export default {
   name: 'App',
   data(){
     return{
+      call:0,
       items: ['Home', 'Earl Estate', 'About'],
       products: ['SunnyBank', 'WestEnd', 'EastEnd'],
       cities: ['Sydney', 'New York', 'Tokyo'],
