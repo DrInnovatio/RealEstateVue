@@ -1,13 +1,23 @@
 <template>
+
+  <div class="black-bg" v-if="isModalWindowOpen == true">
+    <div class="white-bg">
+      <h4>Information</h4>
+      <p>Detailed contents</p>
+      <button class="bt" @click="isModalWindowOpen = false">Close</button>
+    </div>
+  </div>
+
   <div class="menu">
     
     <a v-for="(tom, k) in items" :key="tom">{{k}}</a>
 
   </div>  
   <div v-for="(a, i) in products" :key="i">
-    <h4>{{a}}</h4>
-    <p>$50</p>
-    <button @click="increasingNumber()">허위매물</button><span>call : {{call}} </span>
+    <img class="room-img" src="./assets/room0.jpg"/>
+    <h4 @click="isModalWindowOpen = true">{{a}}</h4>
+    <p>{{price[i]}}</p>
+    <button @click="increasingNumber()">허위매물</button><span>call : {{call[i]}} </span>
   </div>
   
 
@@ -19,20 +29,21 @@ export default {
   name: 'App',
   data(){
     return{
-      call: 0,
+      closeModal: true,
+      isModalWindowOpen: false,
+      call: [0, 0, 0,],
       items: ['Home', 'Earl Estate', 'About'],
       products: ['SunnyBank', 'WestEnd', 'EastEnd'],
       cities: ['Sydney', 'New York', 'Tokyo'],
       cars: ["Hyundai", "Benz", "Toyota", "Honda", "Mazda"],
-      price1: 2000,
-      price2: 1200,
-      price3: 3100
+      price: [2000, 3200, 1900]
+      
     }
   },
 
   methods:{
     increasingNumber(){
-      this.call += 1;
+      this.call[0]
     }
   },
   components: {
@@ -62,5 +73,31 @@ export default {
 .menu p {
   color: rgb(40, 241, 13);
   font-size: 2.0rem;
+}
+
+.room-img{
+  width: 10%;
+  margin-top: 40px;
+}
+
+.black-bg {
+  width:20%; 
+  height: 30%;
+  background: black;
+  position: fixed;
+  padding: 20px;
+}
+
+.white-bg {
+  width: 80%;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.bt1 {
+  width: 80px;
+  height: 35px;
+  background: #2c3e50;
 }
 </style>
