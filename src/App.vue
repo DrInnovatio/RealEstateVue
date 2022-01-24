@@ -1,4 +1,9 @@
 <template>
+ <div class="menu">
+    
+    <h1>Aniss Real Estate</h1>
+
+  </div>  
 
   <div class="black-bg" v-if="isModalWindowOpen == true">
     <div class="white-bg">
@@ -8,27 +13,50 @@
     </div>
   </div>
 
-  <div class="menu">
+ 
+  <div v-for="(a, i) in products" :key="i">
+    <img class="room-img" src="./assets/room0.jpg"/>
+    <h4 @click="isModalWindowOpen = true">{{rooms[0].title}}</h4>
+    <p>{{rooms[0].price}}</p>
+    <button @click="increasingNumber()">허위매물</button><span>call : {{call[i]}} </span>
+  </div>
+
+    <div class="menu">
     
     <a v-for="(tom, k) in items" :key="tom">{{k}}</a>
 
   </div>  
   <div v-for="(a, i) in products" :key="i">
-    <img class="room-img" src="./assets/room0.jpg"/>
-    <h4 @click="isModalWindowOpen = true">{{a}}</h4>
-    <p>{{price[i]}}</p>
+    <img class="room-img" src="./assets/room1.jpg"/>
+    <h4 @click="isModalWindowOpen = true">{{rooms[1].title}}</h4>
+    <p>{{rooms[1].price}}</p>
     <button @click="increasingNumber()">허위매물</button><span>call : {{call[i]}} </span>
   </div>
   
+    <div class="menu">
+    
+    <a v-for="(tom, k) in items" :key="tom">{{k}}</a>
+
+  </div>  
+  <div v-for="(a, i) in products" :key="i">
+    <img class="room-img" src="./assets/room2.jpg"/>
+    <h4 @click="isModalWindowOpen = true">{{rooms[2].title}}</h4>
+    <p>{{rooms[2].price}}</p>
+    <button @click="increasingNumber()">허위매물</button><span>call : {{call[i]}} </span>
+  </div>
 
 </template>
 
 <script>
 
+import data from './components/post.js';
+
+
 export default {
   name: 'App',
   data(){
     return{
+      rooms: data,
       closeModal: true,
       isModalWindowOpen: false,
       call: [0, 0, 0,],
@@ -65,10 +93,7 @@ export default {
   padding: 15px;
   border-radius: 5px;
 }
-.menu a {
-  color: white;
-  padding: 10px;
-}
+
 
 .menu p {
   color: rgb(40, 241, 13);
