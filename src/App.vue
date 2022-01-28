@@ -1,7 +1,6 @@
 <template>
  <div class="menu">
-    
-    <h1>Aniss Real Estate</h1>
+  <a v-for="name in 3" :key="">HOME</a>
 
   </div>  
 
@@ -52,19 +51,23 @@
 import data from './components/post.js';
 
 
+
+
 export default {
   name: 'App',
   data(){
     return{
-      rooms: data,
-      closeModal: true,
-      isModalWindowOpen: false,
-      call: [0, 0, 0,],
-      items: ['Home', 'Earl Estate', 'About'],
-      products: ['SunnyBank', 'WestEnd', 'EastEnd'],
-      cities: ['Sydney', 'New York', 'Tokyo'],
-      cars: ["Hyundai", "Benz", "Toyota", "Honda", "Mazda"],
-      price: [2000, 3200, 1900]
+      // rooms: data,
+      // closeModal: true,
+      // isModalWindowOpen: false,
+      // call: [0, 0, 0,],
+      // items: ['Home', 'Earl Estate', 'About'],
+      // products: ['SunnyBank', 'WestEnd', 'EastEnd'],
+      // cities: ['Sydney', 'New York', 'Tokyo'],
+      // cars: ["Hyundai", "Benz", "Toyota", "Honda", "Mazda"],
+      // price: [2000, 3200, 1900]
+
+      products: ['SunnyBank', 'WestEnd', 'EastEnd']
       
     }
   },
@@ -86,6 +89,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
 }
 
 .menu {
@@ -94,7 +98,11 @@ export default {
   border-radius: 5px;
 }
 
-
+.menu a {
+  color: white;
+  padding: 10px;
+}
+ 
 .menu p {
   color: rgb(40, 241, 13);
   font-size: 2.0rem;
