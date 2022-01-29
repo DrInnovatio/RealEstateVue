@@ -1,7 +1,6 @@
 <template>
- <div class="menu">
-  <a v-for="name in 3" :key="">HOME</a>
-
+  <div class="menu">
+    <a v-for="(a, i) in menu" :key="i">{{ a }}</a>
   </div>  
 
   <div class="black-bg" v-if="isModalWindowOpen == true">
@@ -48,7 +47,7 @@
 
 <script>
 
-import data from './components/post.js';
+//import data from './components/post.js';
 
 
 
@@ -66,7 +65,7 @@ export default {
       // cities: ['Sydney', 'New York', 'Tokyo'],
       // cars: ["Hyundai", "Benz", "Toyota", "Honda", "Mazda"],
       // price: [2000, 3200, 1900]
-
+      menu: ["HOME", "Shop", "About"],
       products: ['SunnyBank', 'WestEnd', 'EastEnd']
       
     }
@@ -89,7 +88,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 .menu {
