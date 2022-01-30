@@ -3,7 +3,25 @@
     <a v-for="(a, i) in menu" :key="i">{{ a }}</a>
   </div>  
 
-  <div class="black-bg" v-if="isModalWindowOpen == true">
+  <!-- <div v-for="(a, i) in products" :key="i">
+    <h4>{{ a }}</h4>
+    <p>$5000</p>
+  </div> -->
+
+  <div>
+    <h4>{{products[0]}}</h4>
+    <p>$5,000</p>
+    <button @click="reports += 1" >Fake Deals</button> <span>reports : {{reports}}</span>
+  </div>
+  <div>
+    <h4>{{products[1]}}</h4>
+    <p>$4,000</p>
+  </div><div>
+    <h4>{{products[2]}}</h4>
+    <p>$7,000</p>
+  </div>
+
+  <!-- <div class="black-bg" v-if="isModalWindowOpen == true">
     <div class="white-bg">
       <h4>Information</h4>
       <p>Detailed contents</p>
@@ -41,7 +59,7 @@
     <h4 @click="isModalWindowOpen = true">{{rooms[2].title}}</h4>
     <p>{{rooms[2].price}}</p>
     <button @click="increasingNumber()">허위매물</button><span>call : {{call[i]}} </span>
-  </div>
+  </div> -->
 
 </template>
 
@@ -65,6 +83,7 @@ export default {
       // cities: ['Sydney', 'New York', 'Tokyo'],
       // cars: ["Hyundai", "Benz", "Toyota", "Honda", "Mazda"],
       // price: [2000, 3200, 1900]
+      reports: 0,
       menu: ["HOME", "Shop", "About"],
       products: ['SunnyBank', 'WestEnd', 'EastEnd']
       
