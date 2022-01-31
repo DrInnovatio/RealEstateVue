@@ -11,7 +11,7 @@
   <div>
     <h4>{{products[0]}}</h4>
     <p>$5,000</p>
-    <button @click="reports += 1" >Fake Deals</button> <span>reports : {{reports}}</span>
+    <button @click="increase" >Fake Deals</button> <span>reports : {{reports}}</span>
   </div>
   <div>
     <h4>{{products[1]}}</h4>
@@ -91,8 +91,8 @@ export default {
   },
 
   methods:{
-    increasingNumber(){
-      this.call[0]
+    increase(){
+      this.reports += 1;
     }
   },
   components: {
