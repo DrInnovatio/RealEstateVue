@@ -11,55 +11,22 @@
   <div>
     <h4>{{products[0]}}</h4>
     <p>$5,000</p>
-    <button @click="increase" >Fake Deals</button> <span>reports : {{reports}}</span>
+    <button @click="reports[0] += 1" >Fake Deals</button> <span>reports : {{reports[0]}}</span>
   </div>
+
   <div>
     <h4>{{products[1]}}</h4>
     <p>$4,000</p>
-  </div><div>
+    <button @click="reports[1] += 1"  >Fake Deals</button> <span>reports : {{reports[1]}}</span>
+  </div>
+  
+  <div>
     <h4>{{products[2]}}</h4>
     <p>$7,000</p>
-  </div>
-
-  <!-- <div class="black-bg" v-if="isModalWindowOpen == true">
-    <div class="white-bg">
-      <h4>Information</h4>
-      <p>Detailed contents</p>
-      <button class="bt" @click="isModalWindowOpen = false">Close</button>
-    </div>
+    <button @click="reports[2] += 1" >Fake Deals</button> <span>reports : {{reports[2]}}</span>
   </div>
 
  
-  <div v-for="(a, i) in products" :key="i">
-    <img class="room-img" src="./assets/room0.jpg"/>
-    <h4 @click="isModalWindowOpen = true">{{rooms[0].title}}</h4>
-    <p>{{rooms[0].price}}</p>
-    <button @click="increasingNumber()">허위매물</button><span>call : {{call[i]}} </span>
-  </div>
-
-    <div class="menu">
-    
-    <a v-for="(tom, k) in items" :key="tom">{{k}}</a>
-
-  </div>  
-  <div v-for="(a, i) in products" :key="i">
-    <img class="room-img" src="./assets/room1.jpg"/>
-    <h4 @click="isModalWindowOpen = true">{{rooms[1].title}}</h4>
-    <p>{{rooms[1].price}}</p>
-    <button @click="increasingNumber()">허위매물</button><span>call : {{call[i]}} </span>
-  </div>
-  
-    <div class="menu">
-    
-    <a v-for="(tom, k) in items" :key="tom">{{k}}</a>
-
-  </div>  
-  <div v-for="(a, i) in products" :key="i">
-    <img class="room-img" src="./assets/room2.jpg"/>
-    <h4 @click="isModalWindowOpen = true">{{rooms[2].title}}</h4>
-    <p>{{rooms[2].price}}</p>
-    <button @click="increasingNumber()">허위매물</button><span>call : {{call[i]}} </span>
-  </div> -->
 
 </template>
 
@@ -83,7 +50,7 @@ export default {
       // cities: ['Sydney', 'New York', 'Tokyo'],
       // cars: ["Hyundai", "Benz", "Toyota", "Honda", "Mazda"],
       // price: [2000, 3200, 1900]
-      reports: 0,
+      reports: [0, 0, 0],
       menu: ["HOME", "Shop", "About"],
       products: ['SunnyBank', 'WestEnd', 'EastEnd']
       
