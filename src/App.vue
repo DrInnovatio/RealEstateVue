@@ -9,6 +9,7 @@
   </div> -->
 
   <div>
+    <img src="./assets/room0.jpg" alt="">
     <h4>{{products[0]}}</h4>
     <p>$5,000</p>
     <button @click="reports[0] += 1" >Fake Deals</button> <span>reports : {{reports[0]}}</span>
@@ -29,7 +30,7 @@
  
 
 </template>
-
+ 
 <script>
 
 //import data from './components/post.js';
