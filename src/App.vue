@@ -1,4 +1,13 @@
 <template>
+
+  <div class="black-bg" v-if="isModalWindowOpen == true">
+    <div class="white-bg">
+      <h4>Information</h4>
+      <p>Contents</p>
+      
+    </div>
+  </div>
+
   <div class="menu">
     <a v-for="(a, i) in menu" :key="i">{{ a }}</a>
   </div>  
@@ -9,19 +18,21 @@
   </div> -->
 
   <div>
-    <img src="./assets/room0.jpg" alt="">
-    <h4>{{products[0]}}</h4>
+    <img src="./assets/room0.jpg" class="room-img" alt="">
+    <h4 @click="isModalWindowOpen = true">{{products[0]}}</h4>
     <p>$5,000</p>
     <button @click="reports[0] += 1" >Fake Deals</button> <span>reports : {{reports[0]}}</span>
   </div>
 
   <div>
+    <img src="./assets/room1.jpg" class="room-img" alt="">
     <h4>{{products[1]}}</h4>
     <p>$4,000</p>
     <button @click="reports[1] += 1"  >Fake Deals</button> <span>reports : {{reports[1]}}</span>
   </div>
   
   <div>
+    <img src="./assets/room2.jpg" class="room-img" alt="">
     <h4>{{products[2]}}</h4>
     <p>$7,000</p>
     <button @click="reports[2] += 1" >Fake Deals</button> <span>reports : {{reports[2]}}</span>
@@ -42,15 +53,7 @@ export default {
   name: 'App',
   data(){
     return{
-      // rooms: data,
-      // closeModal: true,
-      // isModalWindowOpen: false,
-      // call: [0, 0, 0,],
-      // items: ['Home', 'Earl Estate', 'About'],
-      // products: ['SunnyBank', 'WestEnd', 'EastEnd'],
-      // cities: ['Sydney', 'New York', 'Tokyo'],
-      // cars: ["Hyundai", "Benz", "Toyota", "Honda", "Mazda"],
-      // price: [2000, 3200, 1900]
+      isModalWindowOpen: false,
       reports: [0, 0, 0],
       menu: ["HOME", "Shop", "About"],
       products: ['SunnyBank', 'WestEnd', 'EastEnd']
@@ -69,6 +72,30 @@ export default {
 </script>
 
 <style>
+
+body {
+  margin: 0
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.black-bg {
+  width: 100%;
+  height: 20%;
+  background: black;
+  position: fixed;
+  padding: 20px;
+}
+
+.white-bg {
+  width: 100%;
+  background: wheat;
+  border-radius: 8px;
+  padding: 20px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -94,23 +121,8 @@ export default {
 }
 
 .room-img{
-  width: 10%;
+  width: 100%;
   margin-top: 40px;
-}
-
-.black-bg {
-  width:20%; 
-  height: 30%;
-  background: black;
-  position: fixed;
-  padding: 20px;
-}
-
-.white-bg {
-  width: 80%;
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
 }
 
 .bt1 {
