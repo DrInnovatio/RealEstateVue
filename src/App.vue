@@ -4,7 +4,7 @@
     <div class="white-bg">
       <h4>Information</h4>
       <p>Contents</p>
-      
+      <button @click="isModalWindowOpen = false">close</button>
     </div>
   </div>
 
