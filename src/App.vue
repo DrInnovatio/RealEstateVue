@@ -17,26 +17,16 @@
     <p>$5000</p>
   </div> -->
 
+
   <div>
-    <img src="./assets/room0.jpg" class="room-img" alt="">
-    <h4 @click="isModalWindowOpen = true">{{products[0]}}</h4>
-    <p>$5,000</p>
+    <img :src="rooms[0].image" class="room-img" alt="">
+    <h4 @click="isModalWindowOpen = true">{{rooms[0].title}}</h4>
+    <p>${{rooms[0].price}}</p>
     <button @click="reports[0] += 1" >Fake Deals</button> <span>reports : {{reports[0]}}</span>
   </div>
 
-  <div>
-    <img src="./assets/room1.jpg" class="room-img" alt="">
-    <h4>{{products[1]}}</h4>
-    <p>$4,000</p>
-    <button @click="reports[1] += 1"  >Fake Deals</button> <span>reports : {{reports[1]}}</span>
-  </div>
   
-  <div>
-    <img src="./assets/room2.jpg" class="room-img" alt="">
-    <h4>{{products[2]}}</h4>
-    <p>$7,000</p>
-    <button @click="reports[2] += 1" >Fake Deals</button> <span>reports : {{reports[2]}}</span>
-  </div>
+  
 
  
 
@@ -44,15 +34,13 @@
  
 <script>
 
-//import data from './components/post.js';
-
-
-
+import data from './components/post.js';
 
 export default {
   name: 'App',
   data(){
     return{
+      rooms: data,
       isModalWindowOpen: false,
       reports: [0, 0, 0],
       menu: ["HOME", "Shop", "About"],
