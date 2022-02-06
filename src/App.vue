@@ -25,13 +25,36 @@
     <button @click="reports[0] += 1" >Fake Deals</button> <span>reports : {{reports[0]}}</span>
   </div>
 
-  
-  
+  <div>
+    <img :src="rooms[1].image" class="room-img" alt="">
+    <h4 @click="isModalWindowOpen = true">{{rooms[1].title}}</h4>
+    <p>${{rooms[1].price}}</p>
+    <button @click="reports[0] += 1" >Fake Deals</button> <span>reports : {{reports[0]}}</span>
+  </div>
 
- 
+  <div>
+    <img :src="rooms[2].image" class="room-img" alt="">
+    <h4 @click="isModalWindowOpen = true">{{rooms[2].title}}</h4>
+    <p>${{rooms[3].price}}</p>
+    <button @click="reports[0] += 1" >Fake Deals</button> <span>reports : {{reports[0]}}</span>
+  </div>
+
+  <div>
+    <img :src="rooms[4].image" class="room-img" alt="">
+    <h4 @click="isModalWindowOpen = true">{{rooms[4].title}}</h4>
+    <p>${{rooms[4].price}}</p>
+    <button @click="reports[0] += 1" >Fake Deals</button> <span>reports : {{reports[0]}}</span>
+  </div>
+
+  <div>
+    <img :src="rooms[5].image" class="room-img" alt="">
+    <h4 @click="isModalWindowOpen = true">{{rooms[5].title}}</h4>
+    <p>${{rooms[5].price}}</p>
+    <button @click="reports[0] += 1" >Fake Deals</button> <span>reports : {{reports[0]}}</span>
+  </div>
 
 </template>
- 
+
 <script>
 
 import data from './components/post.js';
